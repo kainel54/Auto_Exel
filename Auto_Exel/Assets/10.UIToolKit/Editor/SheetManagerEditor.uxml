@@ -1,0 +1,19 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/10.UIToolKit/Editor/SheetManagerEditor.uss?fileID=7433441132597879392&amp;guid=0403c59bc92c3154aa3b3495fb4e1298&amp;type=3#SheetManagerEditor" />
+    <ui:VisualElement name="Container" style="flex-grow: 1;">
+        <ui:Label tabindex="-1" text="Sync data with spreadsheet" parse-escape-sequences="true" display-tooltip-when-elided="true" name="TitleLabel" class="title-text" />
+        <ui:VisualElement name="CharacterContainer">
+            <ui:VisualElement name="Box" class="box">
+                <ui:Label tabindex="-1" text="CharacterData Sync" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Title" class="box-title" />
+                <ui:Button text="Upload Data" parse-escape-sequences="true" display-tooltip-when-elided="true" name="UploadBtn" class="btn btn-blue" />
+                <ui:Button text="Download Data" parse-escape-sequences="true" display-tooltip-when-elided="true" name="DownloadBtn" class="btn btn-red" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+    <ui:VisualElement name="Loading" class="loading-screen">
+        <ui:Label tabindex="-1" text="Processing data..&#10;Wait Please" parse-escape-sequences="false" display-tooltip-when-elided="true" style="color: rgb(255, 255, 255); -unity-text-align: upper-center; -unity-font-style: bold; font-size: 20px; text-shadow: 2px 2px 0 rgb(0, 0, 0);" />
+    </ui:VisualElement>
+    <ui:VisualElement name="Toast" class="toast">
+        <ui:Label tabindex="-1" text="This is toast message" parse-escape-sequences="true" display-tooltip-when-elided="true" name="MsgLabel" style="border-top-left-radius: 5px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border-bottom-left-radius: 5px;" />
+    </ui:VisualElement>
+</ui:UXML>
