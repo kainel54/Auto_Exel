@@ -95,8 +95,9 @@ public class SheetManagerEditor : EditorWindow
         }
     }
 
-    public async void SendGetRequest(string url, Action<string> Oncomplete)
+    public async void SendGetRequest(string url, string type, Action<string> Oncomplete)
     {
+        url = string.IsNullOrEmpty(type) ? url : $"{url}?type={type}";
         using(UnityWebRequest www = UnityWebRequest.Get(url))
         {
             var asyncOP = www.SendWebRequest();

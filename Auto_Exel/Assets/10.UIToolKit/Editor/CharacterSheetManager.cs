@@ -3,6 +3,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Policy;
 using System.Text;
 using UnityEditor;
 using UnityEngine;
@@ -22,11 +23,50 @@ public class CharacterSheetManager : ISheetManager
         uploadBtn.clicked += UploadToSheet;
         var downloadBtn= root.Q<Button>("DownloadBtn");
         downloadBtn.clicked += DownloadFromSheet;
+
+        var imageUploadBtn = root.Q<Button>("ImageUploadBtn");
+        imageUploadBtn.clicked += UploadImageToServer;
         if (_listSO == null)
             FindList();
 
         RefreshAsset();
     }
+
+    private void UploadImageToServer()
+    {
+        JSONObject payloadJson = new JSONObject();
+        foreach(var c in _listSO)
+        {
+            JSONObject obj = new JSONObject();
+            var texture = GetTextureFromSprite(c.sprite);
+            string base64 = Convert.ToBase64String(texture.EncodeToPNG());
+
+            obj.AddField("guid", c.guid);
+            obj.AddField("texture", base64);
+
+            payloadJson.Add(obj);
+        }
+
+        _manager.SetLoadingScreen(true);
+        _manager.SendPostRequest(url: _url, payload: payloadJson.ToString(), type: "img_upload", (msg) =>
+        {
+            _manager.SetLoadingScreen(false);
+            _manager.ShowToastMessage(msg, 3f);
+        });
+    }
+
+    private Texture2D GetTextureFromSprite(Sprite sprite)
+    {
+        Rect rect = sprite.textureRect;
+        Texture2D tex = new Texture2D((int)rect.width, (int)rect.height);
+        Color[] pixels = sprite.texture.GetPixels((int)rect.x,(int)rect.y, (int)rect.width,(int)rect.height);
+
+        tex.SetPixels(pixels);
+        tex.Apply();
+
+        return tex;
+    }
+
     private void FindList()
     {
         string path = $"{_soPath}/Character/List.asset";
@@ -60,7 +100,7 @@ public class CharacterSheetManager : ISheetManager
     public override void DownloadFromSheet()
     {
         _manager.SetLoadingScreen(true);
-        _manager.SendGetRequest(_url, msg =>
+        _manager.SendGetRequest(_url,"character", msg =>
         {
             JSONObject obj = new JSONObject(msg); // 스트링 -> JSONOBJECT로 만들기
             string path = $"{_soPath}/Character";

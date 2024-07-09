@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e09140760e984cd408c33385982a9da9, type: 3}
-  m_Name: Dino
+  m_Name: Knight
   m_EditorClassIdentifier: 
-  moveSpeed: 20
-  charaterName: Dino
-  maxHealth: 300
-  guid: fa5570b2c20961e4ca0182fc855106c4
-  sprite: {fileID: -591894306, guid: 0e2e73a8dd98644418ed38b477324d2a, type: 3}
+  moveSpeed: 3
+  charaterName: Knight
+  maxHealth: 200
+  guid: 086947429981cd546b2c0cfc32e13d5c
+  sprite: {fileID: 1783210342, guid: 0e2e73a8dd98644418ed38b477324d2a, type: 3}

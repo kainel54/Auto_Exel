@@ -7,6 +7,7 @@
                 <ui:Label tabindex="-1" text="CharacterData Sync" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Title" class="box-title" />
                 <ui:Button text="Upload Data" parse-escape-sequences="true" display-tooltip-when-elided="true" name="UploadBtn" class="btn btn-blue" />
                 <ui:Button text="Download Data" parse-escape-sequences="true" display-tooltip-when-elided="true" name="DownloadBtn" class="btn btn-red" />
+                <ui:Button text="Image upload to server" parse-escape-sequences="true" display-tooltip-when-elided="true" name="ImageUploadBtn" class="btn btn-blue" />
             </ui:VisualElement>
         </ui:VisualElement>
     </ui:VisualElement>
