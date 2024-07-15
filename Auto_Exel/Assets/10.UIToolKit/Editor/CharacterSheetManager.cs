@@ -9,7 +9,7 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class CharacterSheetManager : ISheetManager
+public class CharacterSheetManager : SheetManager
 {
     private CharacterDataListSO _listSO;
     private readonly string _soPath = "Assets/08.SO";

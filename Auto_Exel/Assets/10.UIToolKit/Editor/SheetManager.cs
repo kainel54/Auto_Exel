@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public abstract class ISheetManager
+public abstract class SheetManager
 {
 
     protected SheetManagerEditor _manager;

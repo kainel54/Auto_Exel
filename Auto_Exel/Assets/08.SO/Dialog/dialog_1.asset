@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84e8db032b13b674c8ce5640831e1e65, type: 3}
+  m_Name: dialog_1
+  m_EditorClassIdentifier: 
+  dialogID: 1
+  description: "\uB514\uB178\uC640 \uB098\uC774\uD2B8 \uB9CC\uB09C \uC0C1\uD669\uC5D0\uC11C
+    \uB098\uC624\uB294 \uB300\uC0AC"
+  chatList:
+  - {fileID: 11400000, guid: caaf93dc2a6d47141815c184867ada57, type: 2}
+  - {fileID: 11400000, guid: 29bbf89d2d62a46418ba995364857d92, type: 2}
+  - {fileID: 11400000, guid: 882bd061ca07fdb44bc72a4a2346354d, type: 2}

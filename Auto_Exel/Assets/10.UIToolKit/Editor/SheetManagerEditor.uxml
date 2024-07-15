@@ -10,6 +10,12 @@
                 <ui:Button text="Image upload to server" parse-escape-sequences="true" display-tooltip-when-elided="true" name="ImageUploadBtn" class="btn btn-blue" />
             </ui:VisualElement>
         </ui:VisualElement>
+        <ui:VisualElement name="DialogContainer">
+            <ui:VisualElement name="Box" class="box" style="flex-grow: 1;">
+                <ui:Label tabindex="-1" text="Dialog Data Sync" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Title" class="box-title" />
+                <ui:Button text="Load dialog" parse-escape-sequences="true" display-tooltip-when-elided="true" name="LoadDialogBtn" class="btn btn-blue" />
+            </ui:VisualElement>
+        </ui:VisualElement>
     </ui:VisualElement>
     <ui:VisualElement name="Loading" class="loading-screen">
         <ui:Label tabindex="-1" text="Processing data..&#10;Wait Please" parse-escape-sequences="false" display-tooltip-when-elided="true" style="color: rgb(255, 255, 255); -unity-text-align: upper-center; -unity-font-style: bold; font-size: 20px; text-shadow: 2px 2px 0 rgb(0, 0, 0);" />

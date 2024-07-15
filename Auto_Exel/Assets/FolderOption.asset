@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 837a9b7908c74ca4b8e5cf4d20e8c373, type: 3}
+  m_Name: FolderOption
+  m_EditorClassIdentifier: 
+  spriteList:
+  - folderGuid: 20e06853014fd7143b2b60360c6547ad
+    textureGuid: 2a6c11928520742409b930ea7a47ec5f
+  - folderGuid: e8dbfb11c8a25dd4e907cdc6cb68015c
+    textureGuid: 2a6c11928520742409b930ea7a47ec5f

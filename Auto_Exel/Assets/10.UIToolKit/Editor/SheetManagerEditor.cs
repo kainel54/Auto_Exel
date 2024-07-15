@@ -15,6 +15,7 @@ public class SheetManagerEditor : EditorWindow
     private VisualTreeAsset _popupTreeAsset;
 
     private CharacterSheetManager _characterSheet;
+    private DialogSheetManager _dialogSheet;
 
     private void OnEnable()
     {
@@ -23,6 +24,10 @@ public class SheetManagerEditor : EditorWindow
 
         if (_toastMessage == null)
             _toastMessage = new ToastMsg();
+
+        if(_dialogSheet == null){
+            _dialogSheet = new DialogSheetManager();
+        }
         _popupTreeAsset = AssetDatabase.LoadAssetAtPath<VisualTreeAsset>(_popupTreePath);
     }
 
@@ -55,6 +60,9 @@ public class SheetManagerEditor : EditorWindow
 
         var toastRoot = root.Q("Toast");
         _toastMessage.Initialize(toastRoot);
+
+        var dialogRoot = root.Q("DialogContainer");
+        _dialogSheet.Initialize(dialogRoot,this);
 
         //ShowPopupScreen(new PopupString { title = "안녕", content = "내용", cancelText = "취소", confirmText = "확인" }, null, null);
     }
